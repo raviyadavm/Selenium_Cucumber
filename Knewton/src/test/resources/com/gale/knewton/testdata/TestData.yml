@@ -1,0 +1,37 @@
+﻿baseurl: http://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html
+url: http://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html
+browser: chrome
+chromeDriverPath: C:\\ChromeDriver\\chromedriver.exe
+IEDriverPath: src/test/resources/com/gale/knewton/drivers/IEDriverServer.exe
+seleniumserver: local
+remoteURL: http://172.16.3.173:4444
+explicitTimeOut: 90
+Environment: qaf
+debug:
+  pageObjects: true
+email:
+  send: true
+  recepients:
+    recepient1: 
+propertyfilepath: ./src/test/resources/com/gale/knewton/testdata/TestData.properties
+
+ASR_CancleCheckout:
+  userName: att_admin
+  password: Welcome1
+  serviceType: TA
+  template: TestAuto_ASRTA_Check
+  serviceID: G4/KFGS/541348/ /CZUC/
+  uNameRemedy: ppp886
+  passRemedy: ppp886
+  uNameVNet: DST878
+  passVNet: 409592
+ASR_CloseCheckout:
+  userName: att_admin
+  password: Welcome1
+  serviceType: TA
+  template: TestAuto_ASRTA_Check
+  serviceID: 101 /T1 /NWLNCT02DC0/NWLNCT02HA1
+  uNameRemedy: ppp886
+  passRemedy: ppp886
+  uNameVNet: DST878
+  passVNet: 409592

@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Cucumber</groupId>
+	<artifactId>Knewton</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Knewton</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cucumber.version>1.2.2</cucumber.version>
+		<seleniumver>2.48.0</seleniumver>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>${seleniumver}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-jvm</artifactId>
+			<version>1.2.0</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+	
+	<build>
+	  <plugins>
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-compiler-plugin</artifactId>
+	      <version>2.5.1</version>
+	      <configuration>
+	        <encoding>UTF-8</encoding>
+	        <source>1.7</source>
+	        <target>1.7</target>
+	      </configuration>
+	    </plugin>
+	    <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-surefire-plugin</artifactId>
+	    <version>2.14</version>
+	    <configuration>
+	      <skip>true</skip>
+	    </configuration>
+	      <executions>
+	        <execution>
+	        <id>acceptance-test</id>
+	        <phase>test</phase>
+	        <goals>
+	          <goal>test</goal>
+	        </goals>
+	        <configuration>
+	          <skip>false</skip>
+	          <forkCount>2</forkCount>
+	          <reuseForks>false</reuseForks>
+	          <argLine>-Duser.language=en</argLine>
+	          <argLine>-Xmx1024m</argLine>
+	          <argLine>-XX:MaxPermSize=256m</argLine>
+	          <argLine>-Dfile.encoding=UTF-8</argLine>
+	          <useFile>false</useFile>
+	          <includes>
+	            <include>**/*Test.class</include>
+	          </includes>
+	          <testFailureIgnore>true</testFailureIgnore>
+	        </configuration>
+	        </execution>
+	      </executions>
+	    </plugin>
+	  </plugins>
+	</build>
+	
+</project>

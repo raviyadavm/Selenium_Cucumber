@@ -1,0 +1,1 @@
+mvn clean verify -Dtest=Test_Smoke

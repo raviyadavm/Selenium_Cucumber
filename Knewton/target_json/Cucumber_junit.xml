@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="13.069164">
+<testcase classname="Validate ASR Cancle and ASR Close Checkout tickets" name="Use should able to create and Cancle ticket" time="13.069164">
+<system-out><![CDATA[Given I created ticket in VFO with URL http://vfoinfwlacv01.corp.pvt:13002/.passed
+And Created service order in Remedy with URL http://reminfwlacv01.corp.pvt/arsys/shared/login.jsp?/arsys/.passed
+When I Cancle ticket in VFO.................................................passed
+Then I should be able to see the status  in VNET with URL http://vntinfwsacl01.corp.pvt/sh/servlet/PortalLogin.passed
+]]></system-out>
+</testcase>
+</testsuite>
